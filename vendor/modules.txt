@@ -1,0 +1,9 @@
+# github.com/rusriver/config v0.0.0-20210528100655-4e62ef328576
+## explicit
+github.com/rusriver/config
+# github.com/streadway/amqp v1.0.0
+## explicit
+github.com/streadway/amqp
+# gopkg.in/yaml.v2 v2.4.0
+## explicit
+gopkg.in/yaml.v2
