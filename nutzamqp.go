@@ -19,7 +19,7 @@ func AMQPBatchDeclare(
 			panic(fmt.Errorf("!!! nutzamqp.go:18 / 1.1 at \"x, err := cfg.Get(\"exchanges.\" + k)\": %v", err))
 		}
 		err = channel.ExchangeDeclare(
-			x.UString(k),           // name
+			k,                      // name
 			x.UString("type"),      // type
 			x.UBool("durable"),     // durable
 			x.UBool("autodeleted"), // auto-deleted
@@ -37,7 +37,7 @@ func AMQPBatchDeclare(
 			panic(fmt.Errorf("!!! nutzamqp.go:32 / 2.1 at \"q, err := cfg.Get(\"queues.\" + k)\": %v", err))
 		}
 		_, err = channel.QueueDeclare(
-			q.UString(k),                  // name of the queue
+			k,                             // name of the queue
 			q.UBool("durable"),            // durable
 			q.UBool("delete_when_unused"), // delete when unused
 			false,                         // exclusive
