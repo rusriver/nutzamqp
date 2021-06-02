@@ -16,9 +16,9 @@ func AMQPBatchDeclare(
 ) {
 	var err error
 
-	re_ddash_dot, err := regexp.Compile("--")
+	re_ddash_dot, err := regexp.Compile("::")
 	if err != nil {
-		panic(fmt.Errorf("!!! nutzamqp.go:19 / 0.1 at \"re_ddash_dot, err := regexp.Compile(\"--\")\": %v", err))
+		panic(fmt.Errorf("!!! nutzamqp.go:19 / 0.1 at \"re_ddash_dot, err := regexp.Compile(\"::\")\": %v", err))
 	}
 
 	log.Fields["lib"] = "nutzamqp.AMQPBatchDeclare"
