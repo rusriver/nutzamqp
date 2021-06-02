@@ -25,12 +25,13 @@ func AMQPBatchDeclare(
 
 	for k, _ := range cfg.UMap("exchanges") {
 
-		k = re_ddash_dot.ReplaceAllString(k, ".")
-
 		x, err := cfg.Get("exchanges." + k)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:28 / 1.1 at \"x, err := cfg.Get(\"exchanges.\" + k)\": %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:26 / 1.1 at \"x, err := cfg.Get(\"exchanges.\" + k)\": %v", err))
 		}
+
+		k = re_ddash_dot.ReplaceAllString(k, ".")
+
 		err = channel.ExchangeDeclare(
 			k,                      // name
 			x.UString("type"),      // type
@@ -41,19 +42,20 @@ func AMQPBatchDeclare(
 			nil,                    // arguments
 		)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:37 / 1.2: %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:38 / 1.2: %v", err))
 		}
 
 		log.Info("exchange declared OK: %v", k)
 	}
 	for k, _ := range cfg.UMap("queues") {
 
-		k = re_ddash_dot.ReplaceAllString(k, ".")
-
 		q, err := cfg.Get("queues." + k)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:47 / 2.1 at \"q, err := cfg.Get(\"queues.\" + k)\": %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:46 / 2.1 at \"q, err := cfg.Get(\"queues.\" + k)\": %v", err))
 		}
+
+		k = re_ddash_dot.ReplaceAllString(k, ".")
+
 		_, err = channel.QueueDeclare(
 			k,                             // name of the queue
 			q.UBool("durable"),            // durable
@@ -63,7 +65,7 @@ func AMQPBatchDeclare(
 			nil,                           // arguments
 		)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:55 / 2.2: %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:57 / 2.2: %v", err))
 		}
 
 		log.Info("queue declared OK: %v", k)
@@ -83,7 +85,7 @@ func AMQPBatchDeclare(
 			nil,   // arguments
 		)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:74 / 3.2: %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:76 / 3.2: %v", err))
 		}
 
 		log.Info("binding declared OK (x--k--q): '%v' -- '%v' -- '%v'", x, k, q)
