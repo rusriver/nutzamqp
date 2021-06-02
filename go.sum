@@ -1,5 +1,11 @@
+github.com/mitchellh/copystructure v1.2.0 h1:vpKXTN4ewci03Vljg/q9QvCGUDttBOGBIa15WveJJGw=
+github.com/mitchellh/copystructure v1.2.0/go.mod h1:qLl+cE2AmVv+CoeAwDPye/v+N2HKCj9FbZEVFJRxO9s=
+github.com/mitchellh/reflectwalk v1.0.2 h1:G2LzWKi524PWgd3mLHV8Y5k7s6XUvT0Gef6zxSIeXaQ=
+github.com/mitchellh/reflectwalk v1.0.2/go.mod h1:mSTlrgnPZtwu0c4WaC2kGObEpuNDbx0jmZXqmk4esnw=
 github.com/rusriver/config v0.0.0-20210528100655-4e62ef328576 h1:xZuaExVluFjIvJU8levRzTZ5Jir8iZ+I1BaZyBFsJk4=
 github.com/rusriver/config v0.0.0-20210528100655-4e62ef328576/go.mod h1:qlo16k9ms9MMYrGX9A2+dSzz7dlb8873bAGry4XKcSA=
+github.com/rusriver/filtertag v0.0.0-20210601125423-9b7b929cde4b h1:89sQDdR1rlf5gj9dOC49AkpSILi+u0opdPbGZa5Zyt4=
+github.com/rusriver/filtertag v0.0.0-20210601125423-9b7b929cde4b/go.mod h1:ATU8htsT+e0ScE+iEUP1uA6zzBoCqxYtXMf6jWbKtmo=
 github.com/streadway/amqp v1.0.0 h1:kuuDrUJFZL1QYL9hUNuCxNObNzB0bV/ZG5jV3RWAQgo=
 github.com/streadway/amqp v1.0.0/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
