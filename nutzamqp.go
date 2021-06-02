@@ -15,7 +15,7 @@ func AMQPBatchDeclare(
 ) {
 	var err error
 
-	log.Fields["subsystem"] = "nutzamqp.AMQPBatchDeclare"
+	log.Fields["lib"] = "nutzamqp.AMQPBatchDeclare"
 
 	for k, _ := range cfg.UMap("exchanges") {
 		x, err := cfg.Get("exchanges." + k)
