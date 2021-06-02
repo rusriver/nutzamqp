@@ -56,7 +56,7 @@ func AMQPBatchDeclare(
 
 		log.Info("queue declared OK: %v", k)
 	}
-	for _, v := range cfg.UMap("bindings") {
+	for _, v := range cfg.UList("bindings") {
 		b := &config.Config{Root: v}
 
 		x := b.UString("0")
