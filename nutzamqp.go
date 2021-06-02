@@ -2,6 +2,7 @@ package nutzamqp
 
 import (
 	"fmt"
+	"regexp"
 
 	"github.com/rusriver/config"
 	"github.com/rusriver/filtertag"
@@ -17,7 +18,7 @@ func AMQPBatchDeclare(
 
 	re_ddash_dot, err := regexp.Compile(`--`)
 	if err != nil {
-		panic(fmt.Errorf("!!! nutzamqp.go:18 / 0.1 at \"re_ddash_dot, err := regexp.Compile(`--`)\": %v", err))
+		panic(fmt.Errorf("!!! nutzamqp.go:19 / 0.1 at \"re_ddash_dot, err := regexp.Compile(`--`)\": %v", err))
 	}
 
 	log.Fields["lib"] = "nutzamqp.AMQPBatchDeclare"
@@ -28,7 +29,7 @@ func AMQPBatchDeclare(
 
 		x, err := cfg.Get("exchanges." + k)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:27 / 1.1 at \"x, err := cfg.Get(\"exchanges.\" + k)\": %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:28 / 1.1 at \"x, err := cfg.Get(\"exchanges.\" + k)\": %v", err))
 		}
 		err = channel.ExchangeDeclare(
 			k,                      // name
@@ -40,7 +41,7 @@ func AMQPBatchDeclare(
 			nil,                    // arguments
 		)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:36 / 1.2: %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:37 / 1.2: %v", err))
 		}
 
 		log.Info("exchange declared OK: %v", k)
@@ -51,7 +52,7 @@ func AMQPBatchDeclare(
 
 		q, err := cfg.Get("queues." + k)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:46 / 2.1 at \"q, err := cfg.Get(\"queues.\" + k)\": %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:47 / 2.1 at \"q, err := cfg.Get(\"queues.\" + k)\": %v", err))
 		}
 		_, err = channel.QueueDeclare(
 			k,                             // name of the queue
@@ -62,7 +63,7 @@ func AMQPBatchDeclare(
 			nil,                           // arguments
 		)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:54 / 2.2: %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:55 / 2.2: %v", err))
 		}
 
 		log.Info("queue declared OK: %v", k)
@@ -82,7 +83,7 @@ func AMQPBatchDeclare(
 			nil,   // arguments
 		)
 		if err != nil {
-			panic(fmt.Errorf("!!! nutzamqp.go:73 / 3.2: %v", err))
+			panic(fmt.Errorf("!!! nutzamqp.go:74 / 3.2: %v", err))
 		}
 
 		log.Info("binding declared OK (x--k--q): '%v' -- '%v' -- '%v'", x, k, q)
