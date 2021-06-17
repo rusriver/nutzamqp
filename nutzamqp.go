@@ -76,4 +76,24 @@ func AMQPBatchDeclare(
 
 		log.Info("binding declared OK (x--k--q): '%v' -- '%v' -- '%v'", x, k, q)
 	}
+	for _, v := range cfg.UList("xbindings") {
+		b := &config.Config{Root: v}
+
+		s := b.UString("0")
+		k := b.UString("1")
+		d := b.UString("2")
+
+		err = channel.ExchangeBind(
+			d,     // dest
+			k,     // bindingKey
+			s,     // source
+			false, // noWait
+			nil,   // arguments
+		)
+		if err != nil {
+			panic(fmt.Errorf("!!! nutzamqp.go:90 / 4.2: %v", err))
+		}
+
+		log.Info("binding declared OK (x--k--q): '%v' -- '%v' -- '%v'", x, k, q)
+	}
 }
