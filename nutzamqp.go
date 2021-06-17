@@ -94,6 +94,6 @@ func AMQPBatchDeclare(
 			panic(fmt.Errorf("!!! nutzamqp.go:90 / 4.2: %v", err))
 		}
 
-		log.Info("binding declared OK (x--k--q): '%v' -- '%v' -- '%v'", x, k, q)
+		log.Info("binding declared OK (x--k--x): '%v' -- '%v' -- '%v'", s, k, d)
 	}
 }
